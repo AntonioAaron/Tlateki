@@ -26,12 +26,12 @@ struct Question3: View {
             // Pregunta
             if showQuestion {
                 VStack {
-                    Text("¿Cómo ayuda la reforestación a Milpa Alta?")
+                    Text("Según el OCCAMA, ¿qué estilo de vida contribuye a la crisis de gestión de residuos en Oaxaca?")
                         .font(.body)
                         .padding()
                     
                     // Opciones de respuesta
-                    ForEach(["Aumenta el turismo", "Actúa como sumidero de carbono", "Incrementa el precio de la tierra", "Destruye ecosistemas"], id: \.self) { option in
+                    ForEach(["Vida autosustentable", "Vida comunitaria", "Vida moderna basada en el consumismo", "Vida rural tradicional"], id: \.self) { option in
                         Button(action: {
                             selectedAnswer = option
                             showAnswerFeedback = true
@@ -46,8 +46,8 @@ struct Question3: View {
                     
                     // Feedback de respuesta
                     if showAnswerFeedback {
-                        if selectedAnswer == "Actúa como sumidero de carbono" {
-                            Text("¡Correcto! La reforestación en Milpa Alta ayuda a mitigar el cambio climático actuando como sumidero de carbono.")
+                        if selectedAnswer == "Vida moderna basada en el consumismo" {
+                            Text("¡Correcto!")
                                 .foregroundColor(.green)
                                 .padding()
                         } else {

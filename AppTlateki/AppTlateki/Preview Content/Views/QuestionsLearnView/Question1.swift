@@ -26,12 +26,12 @@ struct Question1: View {
             // Pregunta
             if showQuestion {
                 VStack {
-                    Text("¿Cuál es una de las principales actividades económicas de Milpa Alta?")
+                    Text("¿Cuántos tiraderos a cielo abierto en Puebla incumplen con la normativa de tratamiento de residuos, según la SMADSOT?")
                         .font(.body)
                         .padding()
                     
                     // Opciones de respuesta
-                    ForEach(["Producción de Nopal", "Minería", "Pesca", "Turismo"], id: \.self) { option in
+                    ForEach(["50", "90", "70", "100"], id: \.self) { option in
                         Button(action: {
                             selectedAnswer = option
                             showAnswerFeedback = true
@@ -46,8 +46,8 @@ struct Question1: View {
                     
                     // Feedback de respuesta
                     if showAnswerFeedback {
-                        if selectedAnswer == "Producción de Nopal" {
-                            Text("¡Correcto! La producción de Nopal es clave en Milpa Alta.")
+                        if selectedAnswer == "70" {
+                            Text("¡Correcto!")
                                 .foregroundColor(.green)
                                 .padding()
                         } else {
