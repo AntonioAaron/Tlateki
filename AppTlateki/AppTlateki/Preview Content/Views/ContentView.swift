@@ -46,7 +46,30 @@ struct ContentView: View {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 15) {
                     ForEach(viewModel.destinations) { destination in
-                        DestinationCard(destination: destination)
+                        
+                        VStack {
+                            // Ajusta la imagen
+                            Color(destination.color)
+                            Image(destination.imageName)
+                                .resizable() // Hace que la imagen pueda cambiar de tamaño
+                                .scaledToFit() // Escala la imagen para que mantenga su proporción
+                                .frame(width: 100, height: 100) // Ajusta el tamaño de la image(cámbialo según tus necesidades)
+                                .clipShape(RoundedRectangle(cornerRadius: 10)) // Opcional: le da bordes redondeados
+                            
+                            Text(destination.name)
+                                .font(.headline)
+                                .foregroundColor(.white)
+                            
+                            Text(destination.location)
+                                .font(.subheadline)
+                                .foregroundColor(.white)
+
+                            Color(destination.color)
+                        }
+                        .padding()
+                        .background(destination.color)
+                        .cornerRadius(10)
+                        .shadow(radius: 5)
                     }
                 }
                 .padding(.horizontal)
