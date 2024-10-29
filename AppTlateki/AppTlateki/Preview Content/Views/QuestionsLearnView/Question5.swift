@@ -26,12 +26,12 @@ struct Question5: View {
             // Pregunta
             if showQuestion {
                 VStack {
-                    Text("¿Cómo puede el compostaje beneficiar a Milpa Alta?")
+                    Text("¿Cuántas bolsas de plástico se utilizan cada minuto en todo el mundo?")
                         .font(.body)
                         .padding()
                     
                     // Opciones de respuesta
-                    ForEach(["Aumenta la producción de fertilizantes químicos", "Mejora la calidad del suelo", "Reduce la producción de cultivos", "Crea residuos tóxicos"], id: \.self) { option in
+                    ForEach(["1 millón", "250,000 millones", "500,000 millones", " 700,000 millones"], id: \.self) { option in
                         Button(action: {
                             selectedAnswer = option
                             showAnswerFeedback = true
@@ -46,8 +46,8 @@ struct Question5: View {
                     
                     // Feedback de respuesta
                     if showAnswerFeedback {
-                        if selectedAnswer == "Mejora la calidad del suelo" {
-                            Text("¡Correcto! El compostaje mejora la calidad del suelo y reduce la necesidad de fertilizantes químicos.")
+                        if selectedAnswer == "500,000 millones" {
+                            Text("¡Correcto!")
                                 .foregroundColor(.green)
                                 .padding()
                         } else {

@@ -26,12 +26,12 @@ struct Question2: View {
             // Pregunta
             if showQuestion {
                 VStack {
-                    Text("¿Cuál es uno de los principales problemas ambientales en Milpa Alta?")
+                    Text("¿Cuántas toneladas de residuos plásticos produce México cada año que son mal gestionadas?")
                         .font(.body)
                         .padding()
                     
                     // Opciones de respuesta
-                    ForEach(["Contaminación del aire", "Deforestación", "Escasez de petróleo", "Uso excesivo de fertilizantes"], id: \.self) { option in
+                    ForEach(["3.5 millones", "4.9 millones", "5.7 millones", "6.2 millones"], id: \.self) { option in
                         Button(action: {
                             selectedAnswer = option
                             showAnswerFeedback = true
@@ -46,8 +46,8 @@ struct Question2: View {
                     
                     // Feedback de respuesta
                     if showAnswerFeedback {
-                        if selectedAnswer == "Deforestación" {
-                            Text("¡Correcto! La deforestación es uno de los principales problemas en Milpa Alta.")
+                        if selectedAnswer == "5.7 millones" {
+                            Text("¡Correcto!")
                                 .foregroundColor(.green)
                                 .padding()
                         } else {

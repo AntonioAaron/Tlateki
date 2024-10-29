@@ -26,12 +26,12 @@ struct Question4: View {
             // Pregunta
             if showQuestion {
                 VStack {
-                    Text("¿Cómo puede el compostaje beneficiar a Milpa Alta?")
+                    Text("¿Qué tipo de residuos son considerados un fenómeno sociocultural que afecta a la salud, el ambiente y la sociedad en México?")
                         .font(.body)
                         .padding()
                     
                     // Opciones de respuesta
-                    ForEach(["Aumenta la producción de fertilizantes químicos", "Mejora la calidad del suelo", "Reduce la producción de cultivos", "Crea residuos tóxicos"], id: \.self) { option in
+                    ForEach(["Residuos Sólidos Urbanos (RSU)", "Residuos de construcción", "Residuos industriales", "Residuos electrónicos"], id: \.self) { option in
                         Button(action: {
                             selectedAnswer = option
                             showAnswerFeedback = true
@@ -46,8 +46,8 @@ struct Question4: View {
                     
                     // Feedback de respuesta
                     if showAnswerFeedback {
-                        if selectedAnswer == "Mejora la calidad del suelo" {
-                            Text("¡Correcto! El compostaje mejora la calidad del suelo y reduce la necesidad de fertilizantes químicos.")
+                        if selectedAnswer == "Residuos Sólidos Urbanos (RSU)" {
+                            Text("¡Correcto!")
                                 .foregroundColor(.green)
                                 .padding()
                         } else {
