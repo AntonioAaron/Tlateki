@@ -12,28 +12,28 @@ struct MainView: View {
         TabView {
             ContentView()
                 .tabItem {
-                    Image("")
+                    Image("mapa")
                         .resizable()
                         .frame(width: 5, height: 5)
                     Text("Mapa")
                 }
             NewsView()
                 .tabItem {
-                    Image("")
+                    Image("noticia")
                         .resizable()
                         .frame(width: 5, height: 5)
                     Text("Noticias")
                 }
             EducationView()
                 .tabItem {
-                    Image("")
+                    Image("educacion")
                         .resizable()
                         .frame(width: 5, height: 5)
                     Text("Educación")
                 }
             TipsView()
                 .tabItem {
-                    Image("")
+                    Image("consejos")
                         .resizable()
                         .frame(width: 5, height: 5)
                     Text("Consejos")

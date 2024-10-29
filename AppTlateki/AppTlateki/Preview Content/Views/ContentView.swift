@@ -16,7 +16,7 @@ struct ContentView: View {
         VStack(spacing: 20) {
             
             HStack {
-                Image("logoApp2")
+                Image("logo")
                     .resizable()
                     .scaledToFit()
                     .frame(height: 50)
