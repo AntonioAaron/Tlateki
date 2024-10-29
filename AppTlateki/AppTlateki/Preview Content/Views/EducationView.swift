@@ -78,8 +78,8 @@ struct EducationView: View {
                     //Seccion de simbolos de reciclaje
                     VStack(alignment: .leading, spacing: 10) {
                         Text("Significado de Símbolos de Reciclaje")
-                            .font(.title2)
-                            .foregroundColor(.green)
+                            .font(.title)
+                            .foregroundColor(.black)
                             .padding(.top)
                         
                         ForEach(recyclingSymbols, id: \.symbol) { symbolInfo in
@@ -95,6 +95,49 @@ struct EducationView: View {
                         }
                     }
                     .padding()
+                    .background(RoundedRectangle(cornerRadius: 10).fill(Color.orange.opacity(0.1)))
+                                        .padding(.horizontal)
+                    
+                    VStack(alignment: .leading, spacing: 15){
+                        HStack{
+                            
+                            Image("contenedor")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 30, height: 30)
+                            Text("Contenedores comunes")
+                                .font(.title)
+                                .padding(.bottom, 5)
+                            
+                        }
+                        
+                        ZStack{
+                            RoundedRectangle(cornerRadius: 10)
+                                .fill(Color.blue.opacity(0.1))
+                            
+                            
+                            List(commonContainer){ container in
+                                
+                                NavigationLink(destination: ContainerDetailView(container: container)){
+                                    
+                                    HStack {
+                                        Image(container.imageName)
+                                            .resizable()
+                                            .scaledToFit()
+                                            .frame(width: 50, height: 50)
+                                        Text(container.name)
+                                            .font(.headline)
+                                    }
+                                }
+                                .listRowBackground(Color.clear)
+                            }
+                            .frame(height: 300) // Para limitar el tamaño de la lista
+                            .listStyle(PlainListStyle())
+                        }
+                    }
+                    .padding()
+                    .background(RoundedRectangle(cornerRadius: 10).fill(Color.blue.opacity(0.1)))
+                    .padding(.horizontal)
                     
                     
                     // Quiz interactivo
@@ -102,7 +145,7 @@ struct EducationView: View {
                         
                         Text("Quiz de Reciclaje")
                             .font(.title)
-                            .foregroundColor(.green)
+                            .foregroundColor(.black)
                             .padding(.bottom, 5)
                         
                         Text(quizQuestions[quizQuestionIndex].question)
@@ -135,6 +178,8 @@ struct EducationView: View {
                         }
                     }
                     .padding()
+                    .background(RoundedRectangle(cornerRadius: 10).fill(Color.yellow.opacity(0.1)))
+                                        .padding(.horizontal)
                     
                     Spacer()
                 }
@@ -149,13 +194,35 @@ struct CommonContainer: Identifiable {
     let imageName: String
     let description: String
     let recipe: String
+    let manualTittle: String
+    let manualImage: String
 }
 
 let commonContainer = [
     
-    CommonContainer(name:"Árnica", imageName: "arnica", description: "Los químicos activos en la árnica pueden reducir la hinchazón, disminuir el dolor y actuar como antibióticos. Pero la árnica puede ser peligrosa cuando se toma por vía oral, a menos que se use en diluciones homeopáticas.", recipe: "Pon una olla con dos litros de agua. Agrega lo que tomen tus dedos de árnica. Pon una tapa para conservar el calor. Déjala hervir a fuego medio. Luego de que hierva debes retirarla del fuego. Déjala reposar durante 10 minutos con la tapa puesta. Cuela el té al servirlo en una taza. Puedes endulzarlo al gusto con miel o azúcar y recuerda que tú puedes secar tu árnica para no usarla fresca. "),
-    CommonContainer(name:"Sábila", imageName: "sabila", description: "Alivia contusiones, esguinces y dolores", recipe: "Usar con "),
-    CommonContainer(name:"Manzanilla", imageName: "manzanilla", description: "Alivia contusiones, esguinces y dolores", recipe: "Usar con ")
+    CommonContainer(
+        name:"Botella de plastico",
+        imageName: "botella",
+        description: "Además de la contaminación a los ecosistemas, los plásticos pueden producir riesgos directos a la salud humana. Por ejemplo, la exposición a ciertas sustancias contenidas en los plásticos (conocidas como disruptores endócrinos) pueden producir alteraciones en la reproducción reproductiva, causar cambios en la respuesta inmune, entre otros efectos, ya que estos compuestos químicos tienen un efecto similar al de algunas hormonas.",
+        recipe: "Siguiengo con la jardinería, puedes hacer un sencillo sistema de riego para el césped. Toma la botella plástica, abre varios agujeros a lo largo de la misma y conéctala al extremo de una manguera.Colócala en el césped y abre la llave del grifo. Cuando salga el agua, se dispersará en pequeños surtidores, disminuyendo la potencia del chorro y regando al mismo tiempo en varias direcciones.",
+        manualTittle: "Sistema de riego",
+        manualImage: "riego"),
+    
+    CommonContainer(
+        name:"Botella de vidrio",
+        imageName: "vidrio",
+        description: "Las botellas de vidrio tienen tanto beneficios como desventajas ambientales. Por un lado, el proceso de producción de vidrio consume mucha energía y recursos naturales, emitiendo dióxido de carbono y contribuyendo al cambio climático. Además, cuando no se reciclan, las botellas de vidrio pueden tardar miles de años en descomponerse, ocupando espacio en vertederos y afectando la biodiversidad. Sin embargo, el vidrio es 100% reciclable y puede reciclarse indefinidamente sin perder calidad, reduciendo la necesidad de fabricar vidrio nuevo y disminuyendo los residuos. Además, a diferencia del plástico, el vidrio no libera químicos dañinos al ambiente, lo que lo convierte en una opción más segura y sostenible.",
+        recipe: "Para hacer un vaso a partir de una botella de vidrio, empieza limpiando bien la botella y marcando una línea recta alrededor de donde deseas cortar. Usa un cortador de vidrio o una sierra especial para realizar el corte, aplicando una presión uniforme; también puedes calentar la botella en agua hirviendo y sumergirla después en agua fría para que se rompa con la tensión. Una vez cortada, lija los bordes con papel de lija fino para evitar cortes, y enjuaga el vaso para eliminar restos de vidrio. Opcionalmente, puedes decorarlo con materiales seguros para alimentos si lo deseas como vaso, o usarlo como maceta o pieza decorativa.",
+        manualTittle: "Usos del vidrio",
+        manualImage: "vaso"),
+    
+    CommonContainer(
+        name:"Lata",
+        imageName: "lata",
+        description: "El aluminio reciclado juega un papel importante en su industria y contribuye significativamente a reducir la demanda de aluminio primario, además de tener un precio más atractivo para las empresas.",
+        recipe: "Usa un abrelatas para destapar la lata y perfora unos agujeros en el fondo, con un clavo de punta y un martillo, que dejen salir el agua y no ahogar tus vegetales. Si prefieres, o la lata no resulta tan vistosa por sí misma, puedes pintarla. ",
+        manualTittle: "Maseta",
+        manualImage: "planta")
 ]
 
 struct ContainerDetailView: View {
@@ -181,15 +248,32 @@ struct ContainerDetailView: View {
                 
                 Text(container.description)
                     .font(.body)
+                    .frame(maxWidth: .infinity, alignment: .leading)
                     .padding()
                 
-                Text("Receta")
+                Text(container.manualTittle)
+                    .font(.headline)
+                    .padding(.top)
+                                
+                Image(container.manualImage)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 300, height: 300) // Tamaño mediano
+                    .cornerRadius(10)
+                    .padding(.horizontal)
+                
+                Text("Instrucciones")
                     .font(.headline)
                     .padding(.top)
                 
                 Text(container.recipe)
                     .font(.body)
+                    .frame(maxWidth: .infinity, alignment: .leading)
                     .padding()
+                
+                Text(container.recipe)
+                                    .font(.body)
+                                    .padding()
                 
                 Spacer()
                 
