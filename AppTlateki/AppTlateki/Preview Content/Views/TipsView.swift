@@ -16,12 +16,13 @@ struct TipsView: View {
                 VStack {
                     
                     Spacer()
-                    Text("Salud")
+                    Text("Consejos")
                         .font(.largeTitle)
                         .foregroundColor(.gray)
                     Text("Aqui encontrarás noticias, campañas y centros de salud de tu localidad")
-                        .font(.body)
-                        .padding()
+                        .font(.custom("HelveticaNeue", size: 16))
+                        .multilineTextAlignment(.center)
+                        .padding(.horizontal)
                 }
                 
                 // Apartado de Noticias de Salud
