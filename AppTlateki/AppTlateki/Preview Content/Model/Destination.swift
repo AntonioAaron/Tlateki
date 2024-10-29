@@ -21,18 +21,20 @@ struct Destination: Identifiable {
     // Propiedad calculada para determinar el color basado en la categoría
     var color: Color {
         switch category {
-        case "Electrónicos":
-            return .orange
+        case "Tócixos":
+            return .red
         case "PET":
             return .blue
         case "Vidrio":
             return .green
-        case "Papel":
+        case "Metales":
             return .purple
-        case "Orgánico":
+        case "Carton":
             return .brown
+        case "Orgánico":
+            return .orange
         default:
-            return .gray // Color por defecto
+            return .gray 
         }
     }
 }
