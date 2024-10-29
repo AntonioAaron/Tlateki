@@ -47,24 +47,23 @@ struct NewsView: View {
                         Image(systemName: "leaf.circle.fill")
                             .foregroundColor(.green)
                             .font(.title)
-                        Text("1. Introducción al cuidado ambiental en zonas rurales de México")
+                        Text("Operan 70 tiraderos a cielo abierto en Puebla e incumplen la normativa")
                             .font(.headline)
                     }
                     .padding(.vertical, 5)
 
-                    Image("exampleImage1") // Esqueleto para imagen
+                    Image("noticia1")
                         .resizable()
-                        .scaledToFit()
+                        .aspectRatio(contentMode: .fill)
                         .frame(height: 150)
                         .cornerRadius(10)
+                        .clipped()
 
                     if isSection1Expanded {
-                        Text("""
-                        En México, las zonas rurales como Milpa Alta son clave para la conservación de la biodiversidad y el mantenimiento de servicios ecosistémicos cruciales, como la purificación del agua y la regulación del clima. Estas áreas son ricas en biodiversidad y hogar de muchas comunidades indígenas y campesinas, que dependen directamente de los recursos naturales para su sustento.
-                        """)
+                        Text("En la entidad existen 70 tiraderos a cielo abierto que incumplen con la normativa para el tratamiento de los residuos, informó Norma Sandoval Gómez, encargada de despacho de la Secretaría de Medio Ambiente, Desarrollo Sustentable y Ordenamiento Territorial (SMADSOT), quien indicó que la cifra se obtuvo de un estudio que se realizó este año y que será heredado a la siguiente administración.")
                         .padding(.bottom)
 
-                        Question1() // Agrega la pregunta correspondiente
+                        Question1()
                     }
 
                     Button(action: { isSection1Expanded.toggle() }) {
@@ -79,6 +78,13 @@ struct NewsView: View {
                         }
                         Text("¿Te resultó útil esta sección?")
                     }
+                    .padding(.top, 5)
+
+                    HStack {
+                        Link("Ir a la noticia", destination: URL(string: "https://www.elsoldepuebla.com.mx/local/operan-70-tiraderos-a-cielo-abierto-en-puebla-e-incumplen-la-normativa-12782126.html")!)
+                            .foregroundColor(.blue)
+                    }
+                    .frame(maxWidth: .infinity)
                     .padding(.top, 5)
                 }
                 .padding()
@@ -95,24 +101,23 @@ struct NewsView: View {
                         Image(systemName: "globe.americas.fill")
                             .foregroundColor(.orange)
                             .font(.title)
-                        Text("2. Principales problemas ambientales en zonas rurales como Milpa Alta")
+                        Text("Mala gestión en México de 5.7 millones de toneladas de residuos plásticos por año")
                             .font(.headline)
                     }
                     .padding(.vertical, 5)
 
-                    Image("exampleImage2") // Esqueleto para imagen
+                    Image("noticia2")
                         .resizable()
-                        .scaledToFit()
+                        .aspectRatio(contentMode: .fill)
                         .frame(height: 150)
                         .cornerRadius(10)
+                        .clipped()
 
                     if isSection2Expanded {
-                        Text("""
-                        En zonas rurales de México, incluidos lugares como Milpa Alta, los principales problemas ambientales incluyen la deforestación, la erosión del suelo, la contaminación del agua y el mal manejo de residuos sólidos.
-                        """)
+                        Text("México genera 5.7 millones de toneladas de residuos plásticos al año y son mal gestionados, lo cual también contribuye a la crisis climática ya que esta industria aporta el 3.4 por ciento de las emisiones de gases de efecto de invernadero a nivel global, señaló el Fondo Mundial para la Naturaleza (WWF, por sus siglas en inglés).")
                         .padding(.bottom)
 
-                        Question2() // Agrega la pregunta correspondiente
+                        Question2()
                     }
 
                     Button(action: { isSection2Expanded.toggle() }) {
@@ -127,6 +132,13 @@ struct NewsView: View {
                         }
                         Text("¿Te resultó útil esta sección?")
                     }
+                    .padding(.top, 5)
+
+                    HStack {
+                        Link("Ir a la noticia", destination: URL(string: "https://www.jornada.com.mx/noticia/2024/03/20/sociedad/mala-gestion-en-mexico-de-5-7-millones-de-ton-de-residuos-plasticos-por-ano-3220")!)
+                            .foregroundColor(.blue)
+                    }
+                    .frame(maxWidth: .infinity)
                     .padding(.top, 5)
                 }
                 .padding()
@@ -143,24 +155,23 @@ struct NewsView: View {
                         Image(systemName: "hands.sparkles.fill")
                             .foregroundColor(.blue)
                             .font(.title)
-                        Text("3. Beneficios del cuidado ambiental en Milpa Alta y otras zonas rurales")
+                        Text("Residuos sólidos en Oaxaca: OCCAMA alerta sobre la crisis de gestión")
                             .font(.headline)
                     }
                     .padding(.vertical, 5)
 
-                    Image("exampleImage3") // Esqueleto para imagen
+                    Image("noticia3")
                         .resizable()
-                        .scaledToFit()
+                        .aspectRatio(contentMode: .fill)
                         .frame(height: 150)
                         .cornerRadius(10)
+                        .clipped()
 
                     if isSection3Expanded {
-                        Text("""
-                        El cuidado del medio ambiente en zonas rurales de México, como Milpa Alta, trae beneficios tangibles como la mejora de la agricultura sostenible, la conservación de recursos hídricos y la mitigación del cambio climático.
-                        """)
+                        Text("En un pronunciamiento, el Observatorio Ciudadano/Comunitario del Agua y Medio Ambiente de los Valles Centrales de Oaxaca (OCCAMA), sostuvo que esta situación responde a las formas de vida modernas fundadas en el consumismo, donde el cuidado de la vida y el medio ambiente han pasado a segundo término frente a intereses económicos y agendas políticas particulares.")
                         .padding(.bottom)
 
-                        Question3() // Agrega la pregunta correspondiente
+                        Question3()
                     }
 
                     Button(action: { isSection3Expanded.toggle() }) {
@@ -175,6 +186,13 @@ struct NewsView: View {
                         }
                         Text("¿Te resultó útil esta sección?")
                     }
+                    .padding(.top, 5)
+
+                    HStack {
+                        Link("Ir a la noticia", destination: URL(string: "https://www.nvinoticias.com/oaxaca/prevencion/residuos-solidos-en-oaxaca-occama-alerta-sobre-la-crisis-de-gestion/167524")!)
+                            .foregroundColor(.blue)
+                    }
+                    .frame(maxWidth: .infinity)
                     .padding(.top, 5)
                 }
                 .padding()
@@ -191,24 +209,23 @@ struct NewsView: View {
                         Image(systemName: "leaf.circle")
                             .foregroundColor(.purple)
                             .font(.title)
-                        Text("4. Acciones que las comunidades rurales de Milpa Alta pueden tomar")
+                        Text("Residuos Urbanos: calamidad y oportunidad para México")
                             .font(.headline)
                     }
                     .padding(.vertical, 5)
 
-                    Image("exampleImage4") // Esqueleto para imagen
+                    Image("noticia4")
                         .resizable()
-                        .scaledToFit()
+                        .aspectRatio(contentMode: .fill)
                         .frame(height: 150)
                         .cornerRadius(10)
+                        .clipped()
 
                     if isSection4Expanded {
-                        Text("""
-                        Las comunidades rurales en Milpa Alta pueden implementar varias prácticas sostenibles, como la reforestación, el compostaje comunitario y la agricultura orgánica, para proteger su medio ambiente.
-                        """)
+                        Text("La basura o Residuos Sólidos Urbanos (RSU) es un fenómeno sociocultural que afecta a todos, siendo consecuencia de una mala planeación que propicia la economía informal e impacta al ambiente, la salud y la sociedad.")
                         .padding(.bottom)
 
-                        Question4() // Agrega la pregunta correspondiente
+                        Question4()
                     }
 
                     Button(action: { isSection4Expanded.toggle() }) {
@@ -223,6 +240,13 @@ struct NewsView: View {
                         }
                         Text("¿Te resultó útil esta sección?")
                     }
+                    .padding(.top, 5)
+
+                    HStack {
+                        Link("Ir a la noticia", destination: URL(string: "https://www.eluniversal.com.mx/opinion/por-mexico-hoy/residuos-urbanos-calamidad-y-oportunidad-para-mexico/")!)
+                            .foregroundColor(.blue)
+                    }
+                    .frame(maxWidth: .infinity)
                     .padding(.top, 5)
                 }
                 .padding()
@@ -239,24 +263,23 @@ struct NewsView: View {
                         Image(systemName: "person.3.fill")
                             .foregroundColor(.teal)
                             .font(.title)
-                        Text("5. Educación ambiental y turismo ecológico")
+                        Text("El dilema de México y sus siete millones de toneladas de basura plástica")
                             .font(.headline)
                     }
                     .padding(.vertical, 5)
 
-                    Image("exampleImage5") // Esqueleto para imagen
+                    Image("noticia5")
                         .resizable()
-                        .scaledToFit()
+                        .aspectRatio(contentMode: .fill)
                         .frame(height: 150)
                         .cornerRadius(10)
+                        .clipped()
 
                     if isSection5Expanded {
-                        Text("""
-                        Fomentar el turismo ecológico en Milpa Alta, como recorridos por sus bosques y áreas agrícolas, puede generar ingresos adicionales para la comunidad y crear conciencia sobre la importancia de proteger el medio ambiente.
-                        """)
+                        Text("Cada minuto, 500.000 millones de bolsas son usadas en todo el mundo y casi otro millón de envases de refrescos son vendidos. La mayoría de estos materiales acabará en los océanos, transformados en contenedores de basura con más de 140 millones de toneladas de fragmentos de plástico flotando al son de las corrientes.")
                         .padding(.bottom)
 
-                        Question5() // Agrega la pregunta correspondiente
+                        Question5()
                     }
 
                     Button(action: { isSection5Expanded.toggle() }) {
@@ -271,6 +294,13 @@ struct NewsView: View {
                         }
                         Text("¿Te resultó útil esta sección?")
                     }
+                    .padding(.top, 5)
+
+                    HStack {
+                        Link("Ir a la noticia", destination: URL(string: "https://elpais.com/america-futura/2023-01-20/el-dilema-de-mexico-y-las-siete-millones-de-toneladas-de-plastico-que-acaban-en-la-basura-o-en-el-mar.html")!)
+                            .foregroundColor(.blue)
+                    }
+                    .frame(maxWidth: .infinity)
                     .padding(.top, 5)
                 }
                 .padding()
