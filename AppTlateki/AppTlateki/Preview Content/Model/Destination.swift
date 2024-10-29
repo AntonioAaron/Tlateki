@@ -13,7 +13,7 @@ struct Destination: Identifiable {
     var id = UUID()  // Identificador del lugar
     var name: String  // Nombre del lugar
     var location: String   // Lugar
-    var imageName: String  // Nombre de la imagen específica para cada destino
+    var imageName: String 
     var category: String    // Categoría de reciclaje
     var latitude: Double    // Agregar latitud
     var longitude: Double   // Agregar longitud
