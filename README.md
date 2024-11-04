@@ -1,2 +1,3 @@
 # Tlateki
-Desarrollo App 
+Desarrollo App Tlateki 
+  Hackathon octubre 2024 - Foro de vinculacion y emprendimiento FCA
